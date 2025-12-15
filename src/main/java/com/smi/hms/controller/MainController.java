@@ -33,7 +33,14 @@ import com.smi.hms.prescriberepository.PrescribeRepository;
 import com.smi.hms.repository.MainRepository;
 import com.smi.hms.staffbean.Staff;
 
-@CrossOrigin(origins = {"http://localhost:4200", "http://hms-angular:80", "http://hms-ang-container:80"})
+
+@CrossOrigin(origins = {
+    "http://localhost:8085",  // your current frontend port
+    "http://localhost:4200",  // optional, if you use dev server
+    "http://hms-angular:80",  // only if other containers access it
+    "http://hms-ang-container:80" // only if other containers access it
+})
+
 @RestController
 @RequestMapping("/api/v1")
 public class MainController {
